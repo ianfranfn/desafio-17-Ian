@@ -1,0 +1,81 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Miguel",
+      "apellido": "Gonzalez",
+      "edad": 32,
+      "puesto": "lider de proyecto",
+      "id": "458b"
+    },
+    {
+      "nombre": "Juan",
+      "apellido": "Perez",
+      "edad": 25,
+      "puesto": "Empresario",
+      "id": "2c49"
+    },
+    {
+      "nombre": "Pedro",
+      "apellido": "Gomez",
+      "edad": 45,
+      "puesto": "Programador",
+      "id": "1c81"
+    },
+    {
+      "nombre": "Carlos",
+      "apellido": "Leonel",
+      "edad": 22,
+      "puesto": "Diseñador",
+      "id": "524f"
+    },
+    {
+      "nombre": "Luis",
+      "apellido": "Fernandez",
+      "edad": 28,
+      "puesto": "Ingeniero",
+      "id": "5afa"
+    },
+    {
+      "nombre": "Pablo",
+      "apellido": "Suares",
+      "edad": 35,
+      "puesto": "Piloto",
+      "id": "7b47"
+    },
+    {
+      "nombre": "Thomas",
+      "apellido": "Edison",
+      "edad": 50,
+      "puesto": "Inventor",
+      "id": "4dee"
+    },
+    {
+      "nombre": "Alberto",
+      "apellido": "Einstein",
+      "edad": 60,
+      "puesto": "Fisico",
+      "id": "0d42"
+    },
+    {
+      "nombre": "Isaac",
+      "apellido": "Newton",
+      "edad": 39,
+      "puesto": "Matematico",
+      "id": "5458"
+    },
+    {
+      "nombre": "Damian",
+      "apellido": "Nuñez",
+      "edad": 20,
+      "puesto": "Estudiante",
+      "id": "a7e4"
+    },
+    {
+      "nombre": "Sebastian",
+      "apellido": "Dominguez",
+      "edad": 30,
+      "puesto": "Medico",
+      "id": "ffaa"
+    }
+  ]
+}
