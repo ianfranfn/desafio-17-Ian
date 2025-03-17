@@ -1,7 +1,11 @@
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router"
+import { useContext } from "react";
+import UsuariosContext from "../contexts/UsuariosContext";
 
-const Fila = ({ usuario, borrarUsuario, setUsuarioAEditar }) => { // Se recibe el producto, la función borrarProducto y la función setProductoAEditar
+const Fila = ({ usuario }) => { // props = { producto, borrarProducto }
+
+    const { borrarUsuario, setUsuarioAEditar } = useContext(UsuariosContext)
 
     const navigate = useNavigate() // Se inicializa el hook useNavigate
 
