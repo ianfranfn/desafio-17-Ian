@@ -1,4 +1,4 @@
-const { createContext, useState, useEffect } = require("react");
+import { createContext, useState, useEffect } from "react"
 
 const UsuariosContext = createContext()
 
@@ -53,27 +53,29 @@ const UsuariosProvider = ({children}) => {
 
     const editarUsuario = async (usuarioEditado) => {
         const urlEditar = import.meta.env.VITE_BACKEND + usuarioEditado.id
-
+    
         try {
-            const res = await fetch(urlEditar, {
-                method: 'PUT',
-                headers: { 'content-type': 'application/json' },
-                body: JSON.stringify(usuarioEditado)
-            })
-
-            if (!res.ok) {
-                throw new Error("No se pudo hacer la peticion")
-            }
-
-            const usuarioEditadoBackend = await res.json()
-
-            const nuevoEstadoUsuarios = usuarios.map(usuar => usuar.id === usuarioEditado.id ? usuarioEditado : usuar)
-
-            setUsuarios(nuevoEstadoUsuarios)
+    
+          const res = await fetch(urlEditar, {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(usuarioEditado)
+          })
+    
+          if (!res.ok) {
+            throw new Error('No se puede hacer la peticion')
+          }
+    
+          const usuarioEditadoBackend = await res.json()
+          console.log(usuarioEditadoBackend);
+    
+          const nuevoEstadoUsuarios = usuarios.map(prod => prod.id === usuarioEditadoBackend.id ? usuarioEditado : prod)
+    
+          setUsuarios(nuevoEstadoUsuarios)
         } catch (error) {
-            console.error(error)
+          console.error(error.message);
         }
-    }
+      }
 
     const borrarUsuario = async (id) => {
         const urlBorrado = import.meta.env.VITE_BACKEND + id

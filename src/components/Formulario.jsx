@@ -3,21 +3,22 @@ import UsuariosContext from "../contexts/UsuariosContext"
 
 const Formulario = () => {
 
-    const { agregarUsuario, setUsuarioAEditar, usuarioAEditar, editarUsuario } = useContext(UsuariosContext)
+    const { agregarUsuario, setUsuariosAEditar, usuariosAEditar, editarUsuario } = useContext(UsuariosContext)
 
     const dataFormularioInicial ={
         id: null,
         nombre: '',
         apellido: '',
         edad: '',
-        puesto: ''
+        puesto: '',
+        imagen: ''
     }
 
     const [dataFormulario, setDataFormulario] = useState(dataFormularioInicial)
-
+ 
     useEffect(() => {
-        usuarioAEditar ? setDataFormulario(usuarioAEditar) : setDataFormulario(dataFormularioInicial)
-    }, [usuarioAEditar])
+        usuariosAEditar ? setDataFormulario(usuariosAEditar) : setDataFormulario(dataFormularioInicial)
+    }, [usuariosAEditar])
 
     const handleChange = (e) => {
         const dataActualizada = {
@@ -42,13 +43,13 @@ const Formulario = () => {
 
     const handleReset = () => {
         setDataFormulario(dataFormularioInicial)
-        setUsuarioAEditar(null) 
+        setUsuariosAEditar(null) 
     }
 
     return (
         <>
         <h2 className="text-2xl font-semibold my-4">
-            Formulario de { usuarioAEditar ? 'edicion' : 'carga' } de usuarios
+            Formulario de { usuariosAEditar ? 'edicion' : 'carga' } de usuarios
         </h2>
 
         <div className="max-w-lg mb-4">
@@ -101,13 +102,25 @@ const Formulario = () => {
                 onChange={handleChange}
                 value={dataFormulario.puesto}
                 />
+                <label htmlFor="lbl-img" className="block text-sm font-medium text-gray-700">
+                    Imágen
+                </label>
+                <input 
+                type="text"
+                id="lbl-img"
+                placeholder="Ingresa la imágen"
+                className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                name="imagen"
+                onChange={handleChange}
+                value={dataFormulario.imagen}
+                />
 
                 <div className="flex justify-between">
                     <button
                     type="submit"
-                    className={`px-4 py-2 ${ usuarioAEditar ? 'bg-yellow-500' : 'bg-green-500' } text-white rounded-lg ${usuarioAEditar ? 'hover:bg-yellow-700' : 'hover:bg-green-700'} cursor-pointer`}
+                    className={`px-4 py-2 ${ usuariosAEditar ? 'bg-yellow-500' : 'bg-green-500' } text-white rounded-lg ${usuariosAEditar ? 'hover:bg-yellow-700' : 'hover:bg-green-700'} cursor-pointer`}
                     >
-                        { usuarioAEditar ? 'Editar' : 'crear' }
+                        { usuariosAEditar ? 'Editar' : 'crear' }
                     </button>
                     <button
                     type="reset"

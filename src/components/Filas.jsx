@@ -5,7 +5,7 @@ import UsuariosContext from "../contexts/UsuariosContext";
 
 const Fila = ({ usuario }) => { // props = { producto, borrarProducto }
 
-    const { borrarUsuario, setUsuarioAEditar } = useContext(UsuariosContext)
+    const { borrarUsuario, setUsuariosAEditar } = useContext(UsuariosContext)
 
     const navigate = useNavigate() // Se inicializa el hook useNavigate
 
@@ -31,7 +31,7 @@ const Fila = ({ usuario }) => { // props = { producto, borrarProducto }
     }
 
     const handleEditar = (usuario) => {
-        setUsuarioAEditar(usuario)
+        setUsuariosAEditar(usuario)
     }
 
     const handleVer = (id) => {
@@ -45,19 +45,22 @@ const Fila = ({ usuario }) => { // props = { producto, borrarProducto }
             <td className="px-6 py-4">{usuario.edad}</td>
             <td className="px-6 py-4">{usuario.puesto}</td>
             <td className="px-6 py-4">
+                <img src={usuario.imagen} alt={usuario.nombre} style={{ width: '40px' }} />
+            </td>
+            <td className="px-6 py-4">
                 <button
-                onClick={() => handleVer(usuario.id)}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 cursor-pointer mr-2">
+                    onClick={() => handleVer(usuario.id)}
+                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 cursor-pointer mr-2">
                     Ver
                 </button>
                 <button
-                onClick={() => handleEditar(usuario)}
-                className="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 cursor-pointer mr-2">
+                    onClick={() => handleEditar(usuario)}
+                    className="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 cursor-pointer mr-2">
                     Editar
                 </button>
                 <button
-                onClick={() => handleEliminar(usuario.id)}
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer mr-2">
+                    onClick={() => handleEliminar(usuario.id)}
+                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer mr-2">
                     Borrar
                 </button>
             </td>
