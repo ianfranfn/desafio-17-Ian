@@ -7,5 +7,5 @@ Se tuvo en cuenta la utilizacion de contextos, por lo que tanto los nombres, las
 ## Datos del alumno
 
 Nombre: Fariña Núñez Ian Franco
-GitHub: 
-Netlify: 
+GitHub: https://github.com/ianfranfn/desafio-17-Ian.git
+Netlify: https://desafio-17-ian.netlify.app/ 
